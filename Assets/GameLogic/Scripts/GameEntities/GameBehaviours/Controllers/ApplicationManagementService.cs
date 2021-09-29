@@ -24,7 +24,6 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours.Controllers
         [SerializeField] private UiManagementService uiService;
         [SerializeField] private GameManagementService gameService;
         [SerializeField] private GameObject gameEnvironment;
-
         [SerializeField] private int startPlayerLives = 1;
 
         #endregion
@@ -35,16 +34,6 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours.Controllers
         /// Событие добавления очков к общему счету игры
         /// </summary>
         public event Action<int> AddPointsToMainScoreEvent;
-
-        /// <summary>
-        /// Событие уничтожения игрока
-        /// </summary>
-        public event Action PlayerDiedEvent;
-
-        /// <summary>
-        /// Событие начала уровня
-        /// </summary>
-        public event Action StartLevelEvent;
 
         #endregion
 

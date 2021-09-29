@@ -24,7 +24,6 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours
 
         void Awake()
         {
-            //this.moveAlgorithm = new LinearMoveAlgorithm(this.transform.rotation, this.laserSettings.LaserSpeed);
             this.destroyOffscreen = new ShotsBehindScreenDisposer();
             this.collision = new CollisionWithAsteroid();
 

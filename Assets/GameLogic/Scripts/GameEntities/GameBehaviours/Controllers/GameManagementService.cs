@@ -10,7 +10,14 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours.Controllers
     public class GameManagementService : MonoBehaviour
     {
         public event Action<int> IncreaseScoreEvent;
+        /// <summary>
+        /// Событие уничтожения игрока
+        /// </summary>
         public event Action PlayerDiedEvent;
+
+        /// <summary>
+        /// Событие начала игры
+        /// </summary>
         public event Action GameStartedEvent;
 
         [SerializeField] private int level;

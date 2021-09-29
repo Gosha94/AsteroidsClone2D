@@ -54,43 +54,43 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\GameLogic\Scripts\Contracts\IShipInput.cs" />
-    <Compile Include="Assets\GameLogic\Scripts\GameEntities\Models\ShipEngine.cs" />
+    <Compile Include="Assets\GameLogic\Scripts\GameEntities\Models\Ship\ShipEngine.cs" />
     <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\Views\GameProcessView.cs" />
-    <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\Ship.cs" />
     <Compile Include="Assets\GameLogic\Scripts\ScriptableObjects\ShipSettings.cs" />
-    <Compile Include="Assets\GameLogic\Scripts\GameEntities\Models\LinearMoveAlgorithm.cs" />
     <Compile Include="Assets\GameLogic\Scripts\Input\AiAutomaticInput.cs" />
     <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\Controllers\AsteroidEmitterService.cs" />
     <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\Controllers\ShotsBehindScreenDisposer.cs" />
     <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\Views\EndGameView.cs" />
     <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\Controllers\OtherSideScreenCarrier.cs" />
-    <Compile Include="Assets\GameLogic\Scripts\GameEntities\Models\Health.cs" />
     <Compile Include="Assets\GameLogic\Scripts\ScriptableObjects\LaserSettings.cs" />
     <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\Views\StartGameView.cs" />
     <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\LinearMover.cs" />
     <Compile Include="Assets\GameLogic\Scripts\Contracts\IMoveAlgorithm.cs" />
-    <Compile Include="Assets\GameLogic\Scripts\GameEntities\Models\ApplicationTags.cs" />
     <Compile Include="Assets\GameLogic\Scripts\Contracts\IEngine.cs" />
-    <Compile Include="Assets\GameLogic\Scripts\GameEntities\Models\AsteroidEngine.cs" />
+    <Compile Include="Assets\GameLogic\Scripts\GameEntities\Models\Asteroid\AsteroidEngine.cs" />
     <Compile Include="Assets\GameLogic\Scripts\Input\PlayerControllerInput.cs" />
     <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\Controllers\ApplicationManagementService.cs" />
-    <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\LaserGun.cs" />
     <Compile Include="Assets\GameLogic\Scripts\Contracts\ICollisionWith.cs" />
     <Compile Include="Assets\GameLogic\Scripts\ScriptableObjects\GameEntitesEmitterSettings.cs" />
     <Compile Include="Assets\GameLogic\Scripts\Enums\ShotType.cs" />
-    <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\PlayerShipDied.cs" />
+    <Compile Include="Assets\GameLogic\Scripts\GameEntities\Models\Ship\PlayerShipDied.cs" />
     <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\Controllers\UiManagementService.cs" />
-    <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\Armory.cs" />
-    <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\Laser.cs" />
     <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\Controllers\GameManagementService.cs" />
-    <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\CollisionWithEnemyShip.cs" />
     <Compile Include="Assets\GameLogic\Scripts\ScriptableObjects\AsteroidSettings.cs" />
     <Compile Include="Assets\GameLogic\Scripts\Base\SummaryEmptyClass.cs" />
-    <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\CollisionWithAsteroid.cs" />
-    <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\Asteroid.cs" />
+    <Compile Include="Assets\GameLogic\Scripts\GameEntities\Models\Asteroid\Asteroid.cs" />
     <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\Controllers\BehindScreenBase.cs" />
     <Compile Include="Assets\GameLogic\Scripts\Contracts\IEmitterService.cs" />
     <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\Controllers\EnemyShipEmitterService.cs" />
+    <Compile Include="Assets\GameLogic\Scripts\GameEntities\Models\Laser\Laser.cs" />
+    <Compile Include="Assets\GameLogic\Scripts\GameEntities\Models\Common\LinearMoveAlgorithm.cs" />
+    <Compile Include="Assets\GameLogic\Scripts\GameEntities\Models\Laser\CollisionWithEnemyShip.cs" />
+    <Compile Include="Assets\GameLogic\Scripts\GameEntities\Models\Ship\Armory.cs" />
+    <Compile Include="Assets\GameLogic\Scripts\GameEntities\Models\Common\ApplicationTags.cs" />
+    <Compile Include="Assets\GameLogic\Scripts\GameEntities\Models\Ship\LaserGun.cs" />
+    <Compile Include="Assets\GameLogic\Scripts\GameEntities\Models\Common\Health.cs" />
+    <Compile Include="Assets\GameLogic\Scripts\GameEntities\Models\Laser\CollisionWithAsteroid.cs" />
+    <Compile Include="Assets\GameLogic\Scripts\GameEntities\Models\Ship\Ship.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\GameLogic\AsteroidsClone2D.GameLogic.dll" />

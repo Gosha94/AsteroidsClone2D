@@ -19,7 +19,6 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours
 		[SerializeField] private GameObject[] asteroidPieces;
 		[SerializeField] private GameObject[] childAsteroids;
 		[SerializeField] private GameObject explosionFractionsPrefab;
-		//[SerializeField] private AsteroidSettings asteroidSettings;
 
 		private Health health;
 		private IMoveAlgorithm moveAlgorithm;

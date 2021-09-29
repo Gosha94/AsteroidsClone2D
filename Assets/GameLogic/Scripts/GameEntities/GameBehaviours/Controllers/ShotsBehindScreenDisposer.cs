@@ -1,9 +1,8 @@
 ﻿using System;
-using UnityEngine;
 
 namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours.Controllers
 {
-    public class ShotsBehindScreenDisposer : BehindScreenBase
+	public class ShotsBehindScreenDisposer : BehindScreenBase
     {
         public event Action DestroyShotEvent;
 

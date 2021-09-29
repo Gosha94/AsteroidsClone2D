@@ -1,8 +1,8 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
-using Assets.GameLogic.Scripts.ScriptableObjects;
 using Assets.GameLogic.Scripts.Contracts;
+using Assets.GameLogic.Scripts.ScriptableObjects;
 
 namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours.Controllers
 {

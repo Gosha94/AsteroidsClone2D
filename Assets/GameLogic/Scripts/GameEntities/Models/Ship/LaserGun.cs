@@ -25,7 +25,7 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours
 		void Awake()
 		{
 			this.armorBox = FindObjectOfType<Armory>();
-			this.armorBox.Init();
+			//this.armorBox.Init();
 		}
 
 		void Update()

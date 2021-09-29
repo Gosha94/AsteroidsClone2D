@@ -1305,6 +1305,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 984079017982236607, guid: 36bb95b2ebfa0554194d2a36e6320042, type: 3}
+      propertyPath: megaLaserShotFireRate
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 984079018492375904, guid: 36bb95b2ebfa0554194d2a36e6320042, type: 3}
       propertyPath: m_RootOrder
       value: 0

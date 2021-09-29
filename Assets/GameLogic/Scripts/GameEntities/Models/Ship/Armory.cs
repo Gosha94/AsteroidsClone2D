@@ -41,15 +41,15 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours
         public GameObject GetMegaLaserForShot()
             => ammunitionBoxArr[1];
 
-        public void Init()
-        {
-            pool = new List<GameObject>(numOfObjects);
-            for (int i = 0; i < numOfObjects; i++)
-            {
-                //AddGameObject();
-            }
-            hasInitialised = true;
-        }
+        //public void Init()
+        //{
+        //    pool = new List<GameObject>(numOfObjects);
+        //    for (int i = 0; i < numOfObjects; i++)
+        //    {
+        //        AddShotToObjectPool();
+        //    }
+        //    hasInitialised = true;
+        //}
 
         //public GameObject GetGameObject()
         //{
@@ -69,8 +69,8 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours
         //            return ob;
         //        }
         //    }
-            
-        //    GameObject additionalObj = AddGameObject();
+
+        //    GameObject additionalObj = AddShotToObjectPool();
         //    additionalObj.SetActive(true);
         //    return additionalObj;
         //}
@@ -91,7 +91,11 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours
 
         #region Private Methods
 
-        //private GameObject AddGameObject()
+        /// <summary>
+        /// Метод добавляет объект выстрела в список для контроля выпущенных снарядов
+        /// </summary>
+        /// <returns></returns>
+        //private GameObject AddShotToObjectPool()
         //{
         //    var gameObj = Instantiate(spawnPrefab, Vector3.zero, Quaternion.identity);
         //    if (optionalParent == null)
