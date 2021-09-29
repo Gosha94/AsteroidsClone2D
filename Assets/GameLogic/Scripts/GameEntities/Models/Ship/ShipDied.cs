@@ -34,6 +34,7 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours
         {
             explosionObj = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Invoke("FinalizeAfterDie", dieDuration);
+
         }
 
         #endregion

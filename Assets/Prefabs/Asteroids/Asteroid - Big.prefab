@@ -259,8 +259,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7417547410594185238}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.13, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 7417547410593964630}
   - {fileID: 7417547410593980124}
@@ -311,7 +311,7 @@ MonoBehaviour:
   childAsteroids:
   - {fileID: 6534474335686650736, guid: 2116fa2ee02abfd44a502e66e0f6f1ee, type: 3}
   - {fileID: 6534474335686650736, guid: 2116fa2ee02abfd44a502e66e0f6f1ee, type: 3}
-  explosionFractionsPrefab: {fileID: 0}
+  explosionFractionsPrefab: {fileID: 100000, guid: 5f9279dd71224a140bbadd818c62d604, type: 3}
 --- !u!114 &7691585565704379163
 MonoBehaviour:
   m_ObjectHideFlags: 0

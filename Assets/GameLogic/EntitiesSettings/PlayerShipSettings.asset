@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59652e7a0de5172498a8569e46338394, type: 3}
   m_Name: PlayerShipSettings
   m_EditorClassIdentifier: 
-  turnSpeed: 250
-  moveSpeed: 1
+  moveSpeed: 2
+  maxVelocity: 5
+  rotationSpeed: 250
+  friction: 0.5
   useAi: 0

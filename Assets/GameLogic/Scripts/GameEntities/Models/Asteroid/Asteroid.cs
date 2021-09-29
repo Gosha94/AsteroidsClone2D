@@ -46,7 +46,7 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours
 		{
 			health.ReduceHealth(damage);
 
-			if (health.HealthValue < 0)
+			if (health.HealthValue == 0)
 			{
 				GameObject particles = Instantiate(explosionFractionsPrefab, transform.position, Quaternion.identity);
 

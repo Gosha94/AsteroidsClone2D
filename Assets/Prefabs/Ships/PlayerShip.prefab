@@ -81,7 +81,7 @@ Transform:
   m_GameObject: {fileID: 5518702005636211070}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 5518702005460494957}
   - {fileID: 5518702006360921902}
@@ -327,8 +327,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e6a93138efba745a215e51ee7c7e46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  miniLaserShotFireRate: 3
-  megaLaserShotFireRate: 6
-  gunFireRate: 2
+  miniLaserShotFireRate: 1
+  megaLaserShotFireRate: 1
+  gunFireRate: 1
   shotForce: 5
   emitterTransform: {fileID: 5518702007238952364}

@@ -28,15 +28,6 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours.Controllers
 
         #endregion
 
-        #region Public Events
-
-        /// <summary>
-        /// Событие добавления очков к общему счету игры
-        /// </summary>
-        public event Action<int> AddPointsToMainScoreEvent;
-
-        #endregion
-
         #region Public Properties
 
         /// <summary>
