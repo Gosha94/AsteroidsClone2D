@@ -24,8 +24,8 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours
 
         void Awake()
         {
-            this.destroyOffscreen = new ShotsBehindScreenDisposer();
-            this.collision = new CollisionWithAsteroid();
+            this.destroyOffscreen = GetComponent<ShotsBehindScreenDisposer>();
+            this.collision = GetComponent<CollisionWithAsteroid>();
 
             destroyOffscreen.DestroyShotEvent += OnEventDestroy;
             collision.CollisionEvent += OnCollisionWithAsteroid;

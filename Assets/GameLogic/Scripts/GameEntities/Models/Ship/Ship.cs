@@ -50,7 +50,7 @@ public class Ship : MonoBehaviour
 
     private void Awake()
     {
-        this.shipHealth = new Health();
+        this.shipHealth = GetComponent<Health>();
         this.shipHealth.HealthIsEmptyEvent += OnPlayerDie;
 
         if (shipSettings.UseAi)

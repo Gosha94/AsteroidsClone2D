@@ -30,7 +30,7 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours
 		private void Awake()
 		{
 			ChooseRandomAsteroidForm();
-			this.health = new Health();
+			this.health = GetComponent<Health>();
 			//this.moveAlgorithm = new LinearMoveAlgorithm(this.transform, this.asteroidSettings.AsteroidLinearSpeed);
 		}
 

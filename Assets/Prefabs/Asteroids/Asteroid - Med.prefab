@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6534474335691579232}
   - component: {fileID: 8895871214041129973}
   - component: {fileID: 830399825798990754}
+  - component: {fileID: 1230786605732549371}
   m_Layer: 0
   m_Name: Asteroid - Med
   m_TagString: asteroid
@@ -90,6 +91,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+--- !u!114 &1230786605732549371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6534474335686650736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cf2152d1f978924daab7ede6f16679d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6534474335686733814
 GameObject:
   m_ObjectHideFlags: 0

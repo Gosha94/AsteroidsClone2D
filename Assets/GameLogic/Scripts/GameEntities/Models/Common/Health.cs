@@ -1,11 +1,12 @@
 ﻿using System;
+using UnityEngine;
 
 namespace Assets.GameLogic.Scripts.GameEntities.Models
 {
     /// <summary>
     /// Класс описывает модель Здоровья
     /// </summary>
-    public class Health
+    public class Health : MonoBehaviour
     {
 
         private int healthValue = 1;
@@ -46,6 +47,7 @@ namespace Assets.GameLogic.Scripts.GameEntities.Models
         public void ReduceHealth(int reducingValue)
         {
             this.HealthValue -= reducingValue;
+            RaiseEventHealthChanged();
         }
 
         #endregion
@@ -74,7 +76,10 @@ namespace Assets.GameLogic.Scripts.GameEntities.Models
         /// Метод пробуждает событие Здоровье Изменилось
         /// </summary>
         private void RaiseEventHealthChanged()
-            => this.HealthChangedEvent?.Invoke(this.HealthValue);
+        {
+            this.HealthChangedEvent?.Invoke(this.HealthValue);
+            Debug.Log($"Здоровье объекта {this.gameObject.tag} уменьшилось!");
+        }
 
         #endregion
 
