@@ -12,6 +12,9 @@ namespace Assets.GameLogic.Scripts
         private readonly Transform transformToMove;
         private readonly ShipSettings shipSettings;
 
+        private Vector3 tempVelocity;
+        private Vector3 finalVelocity;
+
         public ShipEngine(IShipInput input, Transform transform, ShipSettings settings)
         {
             this.shipInput = input;
@@ -21,8 +24,17 @@ namespace Assets.GameLogic.Scripts
 
         public void Tick()
         {
-            this.transformToMove.Rotate(new Vector3(0, 0, -this.shipInput.Rotation), this.shipSettings.TurnSpeed * Time.deltaTime);
-            this.transformToMove.position += ( this.shipInput.Thrust * (this.transformToMove.up * this.shipSettings.MoveSpeed) * Time.deltaTime );
+            this.transformToMove.Rotate(new Vector3(0, 0, -this.shipInput.Rotation), this.shipSettings.RotationSpeed * Time.deltaTime);
+            this.tempVelocity += ( this.shipInput.Thrust * (this.transformToMove.up * this.shipSettings.MoveSpeed) * Time.deltaTime );
+
+            if (this.shipInput.Thrust == 0.0f)
+            {
+                this.tempVelocity *= this.shipSettings.Friction;
+            }
+
+            finalVelocity = Vector3.ClampMagnitude(tempVelocity, this.shipSettings.MaxVelocity);
+            this.transformToMove.Translate(finalVelocity * Time.deltaTime, Space.World);
+
         }
 
     }

@@ -1,16 +1,15 @@
 using System;
 using UnityEngine;
 using Assets.GameLogic.Scripts.Contracts;
-using Assets.GameLogic.Scripts.ScriptableObjects;
 using Assets.GameLogic.Scripts.GameEntities.Models;
 
 namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours
 {
 
-	/// <summary>
-	/// Класс определяет поведение Астероида в игре
-	/// </summary>
-	public class Asteroid : MonoBehaviour
+    /// <summary>
+    /// Класс определяет поведение Астероида в игре
+    /// </summary>
+    public class Asteroid : MonoBehaviour
 	{
 
 		#region Private Fields
@@ -31,12 +30,6 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours
 		{
 			ChooseRandomAsteroidForm();
 			this.health = GetComponent<Health>();
-			//this.moveAlgorithm = new LinearMoveAlgorithm(this.transform, this.asteroidSettings.AsteroidLinearSpeed);
-		}
-
-        private void Update()
-		{
-			//moveAlgorithm.MovingBasedOnAlgorithm();
 		}
 
 		#endregion
@@ -49,7 +42,7 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours
 		/// Метод обработки cтолкновения
 		/// </summary>
 		/// <param name="damage">Урон от столкновения</param>
-		public void GetCollision(int damage)
+		public void HandleCollision(int damage)
 		{
 			health.ReduceHealth(damage);
 

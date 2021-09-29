@@ -7,7 +7,7 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours
     /// <summary>
     /// Класс отвечает за обработку уничтожения Игрока
     /// </summary>
-    public class PlayerShipDied : MonoBehaviour
+    public class ShipDied : MonoBehaviour
     {
 
         #region Private Fields

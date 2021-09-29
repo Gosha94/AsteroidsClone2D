@@ -4,6 +4,7 @@ using Assets.GameLogic.Scripts.Contracts;
 using Assets.GameLogic.Scripts.GameEntities.Models;
 using System;
 using Assets.GameLogic.Scripts.GameEntities.GameBehaviours;
+using Assets.GameLogic.Scripts.GameEntities.GameBehaviours.Controllers;
 
 /// <summary>
 /// Класс определяет поведение Космического корабля в игре
@@ -18,13 +19,19 @@ public class Ship : MonoBehaviour
     private IShipInput shipInput;
     private ShipEngine shipMotor;
     private GameObject playerShip;
+
     private Health shipHealth;
+    private ShipDied shipDied;
+
+    private CollisionWithAsteroid withAsteroidCollision;
+    private CollisionWithEnemyShip withEnemyShipCollision;
 
     #endregion
 
     #region Public Properties
-    
+
     public event Action PlayerDiedEvent;
+
     public int ShipHealth { get => shipHealth.HealthValue; }
 
     #endregion
@@ -50,8 +57,17 @@ public class Ship : MonoBehaviour
 
     private void Awake()
     {
+        this.withAsteroidCollision = GetComponent<CollisionWithAsteroid>();
+        this.withAsteroidCollision.CollisionEvent += OnCollisionWithAsteroid;
+
+        this.withEnemyShipCollision = GetComponent<CollisionWithEnemyShip>();
+        this.withEnemyShipCollision.CollisionEvent += OnCollisionWithEnemyShip;
+
+        this.shipDied = GetComponent<ShipDied>();
+        this.shipDied.ShipDieCompleteEvent += OnPlayerDie;
+
         this.shipHealth = GetComponent<Health>();
-        this.shipHealth.HealthIsEmptyEvent += OnPlayerDie;
+        //this.shipHealth.HealthIsEmptyEvent += OnPlayerDie;
 
         if (shipSettings.UseAi)
         {
@@ -84,11 +100,20 @@ public class Ship : MonoBehaviour
     private void OnCollisionWithAsteroid(Asteroid asteroid)
     {
         // Уничтожаем Астероид
-        asteroid.GetCollision(int.MaxValue);
+        asteroid.HandleCollision(int.MaxValue);
+        this.shipHealth.ReduceHealth(int.MaxValue);
+
+        shipDied.Die();
 
         // Отключаем объект Корабля
         gameObject.SetActive(false);
 
+        ApplicationLoggerService.LogCollision(this.gameObject.tag, asteroid.tag);
+    }
+
+    private void OnCollisionWithEnemyShip(Ship enemyShip)
+    {
+        ApplicationLoggerService.LogCollision(this.gameObject.tag, enemyShip.tag);
     }
 
     /// <summary>

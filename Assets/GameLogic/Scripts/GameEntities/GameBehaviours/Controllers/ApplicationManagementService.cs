@@ -97,7 +97,7 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours.Controllers
             gameEnvironment.SetActive(false);
 
             gameService.IncreaseScoreEvent += OnLevelPoints;
-            gameService.PlayerDiedEvent += OnLevelLives;
+            gameService.PlayerDiedEvent += OnLevelFailed;
             gameService.GameStartedEvent += OnLevelStarted;
         }
 
@@ -121,11 +121,11 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours.Controllers
         }
         
 
-        private void OnLevelLives()
+        private void OnLevelFailed()
         {
             this.PlayerLives--;
 
-            if (this.PlayerLives >= 0)
+            if (this.PlayerLives > 0)
             {
                 gameService.SpawnPlayer();
             }

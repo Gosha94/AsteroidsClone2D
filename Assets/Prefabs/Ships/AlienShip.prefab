@@ -109,7 +109,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2632468414666232999}
   - component: {fileID: 2632468414666232998}
-  - component: {fileID: 2632468414666233017}
+  - component: {fileID: 5152616159495247110}
+  - component: {fileID: 7041234111046180066}
   m_Layer: 0
   m_Name: AlienShip
   m_TagString: enemy_ship
@@ -153,7 +154,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2632468414666233017
+--- !u!114 &5152616159495247110
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,7 +163,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 2632468414666232996}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84f790ec554791f4488da0a0d4cc49ae, type: 3}
+  m_Script: {fileID: 11500000, guid: ec058c2f244677149bf74468147092c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shipSettings: {fileID: 11400000, guid: a795e155c45c51644a5ceca6e57cab9a, type: 2}
+--- !u!114 &7041234111046180066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2632468414666232996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07419ddd7e49fd64d905b49169a41b55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 196220, guid: 58c9cb3353174a64c9d8a8bf7c18cba9, type: 3}
+  dieDuration: 1

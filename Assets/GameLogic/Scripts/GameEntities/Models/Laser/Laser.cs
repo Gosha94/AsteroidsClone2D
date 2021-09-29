@@ -65,7 +65,7 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours
         
         private void OnCollisionWithAsteroid(Asteroid asteroid)
         {
-            asteroid.GetCollision(damage);
+            asteroid.HandleCollision(damage);
             OnEventDestroy();
         }
 

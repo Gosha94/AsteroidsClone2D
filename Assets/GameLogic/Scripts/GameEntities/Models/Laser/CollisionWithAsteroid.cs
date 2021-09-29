@@ -2,6 +2,7 @@
 using UnityEngine;
 using Assets.GameLogic.Scripts.Contracts;
 using Assets.GameLogic.Scripts.GameEntities.Models;
+using Assets.GameLogic.Scripts.GameEntities.GameBehaviours.Controllers;
 
 namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours
 {
@@ -21,7 +22,9 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours
             if (tag == new ApplicationTags().Asteroid.ToLower())
             {
                 Asteroid asteroid = collider.gameObject.GetComponentInParent<Asteroid>();
-                Debug.Log($"Обнаружено столкновение Объекта {this.gameObject.tag} с Астероидом!");
+                
+                ApplicationLoggerService.LogCollision(this.gameObject.tag, asteroid.tag);
+                
                 CollisionEvent?.Invoke(asteroid);
             }
         }
