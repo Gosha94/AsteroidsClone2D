@@ -18,10 +18,10 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours
         {
             string tag = collider.tag.ToLower();
 
-            if (tag == new ApplicationTags().Asteroid)
+            if (tag == new ApplicationTags().Asteroid.ToLower())
             {
                 Asteroid asteroid = collider.gameObject.GetComponentInParent<Asteroid>();
-
+                Debug.Log($"Обнаружено столкновение Объекта {this.gameObject.tag} с Астероидом!");
                 CollisionEvent?.Invoke(asteroid);
             }
         }

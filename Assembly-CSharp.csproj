@@ -8,8 +8,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <ProjectGuid>{87E5E672-9AA1-508A-B57B-9704113A2DEA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -66,9 +65,10 @@
     <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\Views\EndGameView.cs" />
     <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\Controllers\OtherSideScreenCarrier.cs" />
     <Compile Include="Assets\GameLogic\Scripts\GameEntities\Models\Health.cs" />
+    <Compile Include="Assets\GameLogic\Scripts\ScriptableObjects\LaserSettings.cs" />
     <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\Views\StartGameView.cs" />
+    <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\LinearMover.cs" />
     <Compile Include="Assets\GameLogic\Scripts\Contracts\IMoveAlgorithm.cs" />
-    <Compile Include="Assets\GameLogic\Scripts\ScriptableObjects\GameEntitesEmitterSettings.cs" />
     <Compile Include="Assets\GameLogic\Scripts\GameEntities\Models\ApplicationTags.cs" />
     <Compile Include="Assets\GameLogic\Scripts\Contracts\IEngine.cs" />
     <Compile Include="Assets\GameLogic\Scripts\GameEntities\Models\AsteroidEngine.cs" />
@@ -76,6 +76,8 @@
     <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\Controllers\ApplicationManagementService.cs" />
     <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\LaserGun.cs" />
     <Compile Include="Assets\GameLogic\Scripts\Contracts\ICollisionWith.cs" />
+    <Compile Include="Assets\GameLogic\Scripts\ScriptableObjects\GameEntitesEmitterSettings.cs" />
+    <Compile Include="Assets\GameLogic\Scripts\Enums\ShotType.cs" />
     <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\PlayerShipDied.cs" />
     <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\Controllers\UiManagementService.cs" />
     <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\Armory.cs" />
@@ -87,9 +89,8 @@
     <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\CollisionWithAsteroid.cs" />
     <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\Asteroid.cs" />
     <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\Controllers\BehindScreenBase.cs" />
-    <Compile Include="Assets\GameLogic\Scripts\ScriptableObjects\LaserSettings.cs" />
-    <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\LinearMover.cs" />
-    <Compile Include="Assets\GameLogic\Scripts\Enums\ShotType.cs" />
+    <Compile Include="Assets\GameLogic\Scripts\Contracts\IEmitterService.cs" />
+    <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\Controllers\EnemyShipEmitterService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\GameLogic\AsteroidsClone2D.GameLogic.dll" />

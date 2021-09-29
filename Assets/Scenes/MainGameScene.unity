@@ -325,6 +325,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AsteroidEmitterService
       objectReference: {fileID: 0}
+    - target: {fileID: 1535922199133064829, guid: efda04929d03ab64287a58e9c8c4da1b, type: 3}
+      propertyPath: emitterSettings
+      value: 
+      objectReference: {fileID: 11400000, guid: f767cd08fa5f95d448a61effc50d3198, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efda04929d03ab64287a58e9c8c4da1b, type: 3}
 --- !u!1001 &456575025
@@ -586,7 +590,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1964696525}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &653195640 stripped
 Transform:
@@ -1134,8 +1138,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 653195640}
-  - {fileID: 1602976779}
   - {fileID: 651156087}
+  - {fileID: 1602976779}
   m_Father: {fileID: 622993178}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1297,6 +1301,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1964696525}
     m_Modifications:
+    - target: {fileID: 984079017641067824, guid: 36bb95b2ebfa0554194d2a36e6320042, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 984079018492375904, guid: 36bb95b2ebfa0554194d2a36e6320042, type: 3}
       propertyPath: m_RootOrder
       value: 0

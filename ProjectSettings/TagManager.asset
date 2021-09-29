@@ -4,10 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Asteroid
   - player
   - enemy_ship
-  - Laser
+  - asteroid
+  - short_laser
+  - long_laser
   layers:
   - Default
   - TransparentFX

@@ -26,7 +26,7 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours.Controllers
 
         private void Awake()
         {
-            asteroidEmitter.AsteroidDestroyedEvent += OnAsteroidDestroyed;
+            asteroidEmitter.EntityDestroyedEvent += OnAsteroidDestroyed;
             playerShip.PlayerDiedEvent += OnPlayerDied;
         }
 

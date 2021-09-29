@@ -1,29 +1,36 @@
 using System;
-using System.Linq;
 using UnityEngine;
 using System.Collections.Generic;
 using Assets.GameLogic.Scripts.ScriptableObjects;
+using Assets.GameLogic.Scripts.Contracts;
 
 namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours.Controllers
 {
     /// <summary>
     /// Класс описывает Генератор астероидов
     /// </summary>
-    public class AsteroidEmitterService : MonoBehaviour
+    public class AsteroidEmitterService : MonoBehaviour, IEmitterService
     {
+        
+        #region Private Fields
 
         [SerializeField] private GameObject asteroidPrefab;
         [SerializeField] private GameEntitesEmitterSettings emitterSettings;
 
-        private List<Asteroid> asteroids;
+        private List<Asteroid> asteroidList;
 
-        public event Action<int> AsteroidDestroyedEvent;
+        #endregion
 
-        
+        #region Public Properties
+
+        public event Action<int> EntityDestroyedEvent;
+
         public int GameEntitiesLeft
         {
-            get => asteroids.Count;
+            get => this.asteroidList.Count;
         }
+
+        #endregion
 
         private void Awake()
         {
@@ -34,21 +41,18 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours.Controllers
         
         public void ResetEmitter()
         {
-            if (asteroids != null)
+            if (asteroidList != null)
             {
-                this.asteroids
+                this.asteroidList
                     .ForEach(x =>
                     {
                         Destroy(x.gameObject);
                     });
             }
 
-            asteroids = new List<Asteroid>();
+            asteroidList = new List<Asteroid>();
         }
-
-        /// <summary>
-        /// Метод создает астероиды с настройками из EmitterSettings
-        /// </summary>
+        
         public void SpawnGameEntity()
         {
             int maxAsteroidsNum = this.emitterSettings.StartingEntitiesCount;
@@ -69,9 +73,10 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours.Controllers
             asteroidGO.transform.SetParent(gameObject.transform);
 
             Asteroid asteroid = asteroidGO.GetComponent<Asteroid>();
+
             asteroid.EventDie += OnAsteroidDie;
 
-            asteroids.Add(asteroid);
+            asteroidList.Add(asteroid);
             return asteroid;
         }
 
@@ -84,16 +89,14 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours.Controllers
         /// <param name="childAsteroids">Массив дочерних Астероидов</param>
         private void OnAsteroidDie(Asteroid asteroid, int points, Vector3 position, GameObject[] childAsteroids)
         {
-            asteroids.Remove(asteroid);
+            asteroidList.Remove(asteroid);
 
             for (int i = 0; i < childAsteroids.Length; i++)
             {
                 Quaternion rotation = Quaternion.Euler(new Vector3(0.0f, 0.0f, Mathf.Floor(UnityEngine.Random.Range(0.0f, 360.0f))));
                 CreateAsteroid(childAsteroids[i], position, rotation);
             }
-
-            AsteroidDestroyedEvent?.Invoke(points);
-
+            EntityDestroyedEvent?.Invoke(points);
         }
 
         #endregion

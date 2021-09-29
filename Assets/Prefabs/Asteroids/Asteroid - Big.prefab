@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7417547410597524602}
   m_Layer: 0
   m_Name: Sprite - meteorBrown_big1
-  m_TagString: Asteroid
+  m_TagString: asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69,8 +69,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 226189733
-  m_SortingLayer: 0
+  m_SortingLayerID: 464213361
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300014, guid: dc546a6cc4e911c4e97efcab907cd3b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 7417547410597487486}
   m_Layer: 0
   m_Name: Sprite - meteorBrown_big3
-  m_TagString: Asteroid
+  m_TagString: asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -184,8 +184,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 226189733
-  m_SortingLayer: 0
+  m_SortingLayerID: 464213361
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300018, guid: dc546a6cc4e911c4e97efcab907cd3b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 4649034517830854223}
   m_Layer: 0
   m_Name: Asteroid - Big
-  m_TagString: Asteroid
+  m_TagString: asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 7417547410597487464}
   m_Layer: 0
   m_Name: Sprite - meteorBrown_big2
-  m_TagString: Asteroid
+  m_TagString: asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -406,8 +406,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 226189733
-  m_SortingLayer: 0
+  m_SortingLayerID: 464213361
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300016, guid: dc546a6cc4e911c4e97efcab907cd3b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 7417547410597979006}
   m_Layer: 0
   m_Name: Sprite - meteorBrown_big4
-  m_TagString: Asteroid
+  m_TagString: asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -522,8 +522,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 226189733
-  m_SortingLayer: 0
+  m_SortingLayerID: 464213361
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300020, guid: dc546a6cc4e911c4e97efcab907cd3b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
