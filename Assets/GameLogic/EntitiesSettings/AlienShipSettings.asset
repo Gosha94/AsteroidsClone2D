@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59652e7a0de5172498a8569e46338394, type: 3}
   m_Name: AlienShipSettings
   m_EditorClassIdentifier: 
-  turnSpeed: 150
-  moveSpeed: 0.2
+  moveSpeed: 1
+  maxVelocity: 2
+  rotationSpeed: 250
+  friction: 0.95
+  pointsPerDestroying: 100
   useAi: 1

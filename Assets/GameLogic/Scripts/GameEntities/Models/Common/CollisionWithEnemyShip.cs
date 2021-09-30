@@ -17,7 +17,7 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours
         {
             string tag = collider.tag.ToLower();
 
-            if (tag == new ApplicationTags().EnemyShip)
+            if (tag != new ApplicationTags().Asteroid.ToLower())
             {
                 Ship enemyShip = collider.gameObject.GetComponentInParent<Ship>();
 

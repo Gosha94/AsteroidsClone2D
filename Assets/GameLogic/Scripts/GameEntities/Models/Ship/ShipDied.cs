@@ -34,10 +34,11 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours
         {
             explosionObj = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Invoke("FinalizeAfterDie", dieDuration);
-
         }
 
         #endregion
+
+        #region Private Methods
 
         /// <summary>
         /// Метод для обработки доп.логики при уничтожении корабля игрока
@@ -47,6 +48,8 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours
             Destroy(explosionObj);
             ShipDieCompleteEvent?.Invoke();
         }
+
+        #endregion
 
     }
 }

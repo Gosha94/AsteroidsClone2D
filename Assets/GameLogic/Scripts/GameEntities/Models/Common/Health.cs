@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.GameLogic.Scripts.GameEntities.GameBehaviours.Controllers;
+using System;
 using UnityEngine;
 
 namespace Assets.GameLogic.Scripts.GameEntities.Models
@@ -17,11 +18,6 @@ namespace Assets.GameLogic.Scripts.GameEntities.Models
         /// Событие Здоровье Изменилось
         /// </summary>
         public event Action<int> HealthChangedEvent;
-
-        /// <summary>
-        /// Событие Здоровье Закончилось
-        /// </summary>
-        public event Action HealthIsEmptyEvent;
 
         /// <summary>
         /// Свойство содержит значение Здоровья
@@ -62,15 +58,8 @@ namespace Assets.GameLogic.Scripts.GameEntities.Models
             if (healthForNormalize < 0)
             {
                 healthForNormalize = 0;
-
             }
         }
-
-        /// <summary>
-        /// Метод пробуждает событие Здоровье Закончилось
-        /// </summary>
-        private void RaiseEventHealthIsEmpty()
-            => this.HealthIsEmptyEvent?.Invoke();
 
         /// <summary>
         /// Метод пробуждает событие Здоровье Изменилось
@@ -78,7 +67,7 @@ namespace Assets.GameLogic.Scripts.GameEntities.Models
         private void RaiseEventHealthChanged()
         {
             this.HealthChangedEvent?.Invoke(this.HealthValue);
-            Debug.Log($"Здоровье объекта {this.gameObject.tag} уменьшилось!");
+            ApplicationLoggerService.LogHealthChange(this.gameObject.tag);            
         }
 
         #endregion

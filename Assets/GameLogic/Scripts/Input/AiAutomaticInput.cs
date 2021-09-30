@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using Assets.GameLogic.Scripts.Contracts;
+using Assets.GameLogic.Scripts.GameEntities.GameBehaviours.Controllers;
+using Assets.GameLogic.Scripts.GameEntities.Models;
 
 namespace Assets.GameLogic.Scripts
 {
@@ -7,12 +9,14 @@ namespace Assets.GameLogic.Scripts
     {
 
         private readonly Ship aiShipObject;
-        private readonly GameObject playerShip;
+        private GameObject playerShip;
+        private readonly float shipMoveSpeed;
 
-        public AiAutomaticInput(Ship enemyShip, GameObject playerShip)
+        public AiAutomaticInput(Ship enemyShip, GameObject playerShip, float shipSpeed)
         {
             this.aiShipObject = enemyShip;
             this.playerShip = playerShip;
+            this.shipMoveSpeed = shipSpeed;
         }
 
         public float Rotation { get; private set; }
@@ -28,12 +32,18 @@ namespace Assets.GameLogic.Scripts
         /// </summary>
         private void FollowPlayerShip()
         {
-            Vector3 moveDir = 
-                this.playerShip.transform.position - 
-                this.aiShipObject.transform.position - 
+            if (this.playerShip == null)
+            {
+                this.playerShip = GameObject.FindGameObjectWithTag(new ApplicationTags().Player);
+            }
+            
+            Vector3 moveDir =
+                this.playerShip.transform.position -
+                this.aiShipObject.transform.position -
                 new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
 
-            this.aiShipObject.transform.position += moveDir.normalized * 0.2f * Time.deltaTime;
+            this.aiShipObject.transform.position += moveDir.normalized * this.shipMoveSpeed * Time.deltaTime;
+
         }
 
         #region Not Implemented Elements

@@ -12,16 +12,29 @@ namespace Assets.GameLogic.Scripts.GameEntities.Views
     {
 		#region Private Fields
 
-		private Text scoreText;
+		private Text scoreValue;
+		private Text xCoordinateShipValue;
+		private Text yCoordinateShipValue;
+		private Text angleShipValue;
+		private Text speedShipValue;
+		private Text laserCountShipValue;
+		private Text laserReloadShipTime;
 
-        #endregion
+		#endregion
 
-        #region Mono Methods
+		#region Mono Methods
 
-        private void Awake()
+		private void Awake()
         {
-			this.scoreText = GameObject.Find("ScoreNumber").GetComponent<Text>();
-        }
+			this.scoreValue				= GameObject.Find("ScoreValue")			.GetComponent<Text>();
+			this.xCoordinateShipValue	= GameObject.Find("XCoordValue")		.GetComponent<Text>();
+			this.yCoordinateShipValue	= GameObject.Find("YCoordValue")		.GetComponent<Text>();
+			this.angleShipValue			= GameObject.Find("GradusValue")		.GetComponent<Text>();
+			this.speedShipValue			= GameObject.Find("SpeedValue")			.GetComponent<Text>();
+			this.laserCountShipValue	= GameObject.Find("LaserCountValue")	.GetComponent<Text>();
+			this.laserReloadShipTime	= GameObject.Find("LaserReloadValue")	.GetComponent<Text>();
+
+		}
 
 		private void OnEnable()
 		{
@@ -38,7 +51,7 @@ namespace Assets.GameLogic.Scripts.GameEntities.Views
 		/// <param name="points">Кол-во очков для вывода в UI</param>
 		public void UpdatePoints(int points)
 		{
-			scoreText.text = points.ToString();
+			scoreValue.text = points.ToString();
 		}
 
 		/// <summary>

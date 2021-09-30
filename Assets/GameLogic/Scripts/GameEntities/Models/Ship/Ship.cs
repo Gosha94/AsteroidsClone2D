@@ -1,8 +1,8 @@
+using System;
 using UnityEngine;
 using Assets.GameLogic.Scripts;
 using Assets.GameLogic.Scripts.Contracts;
 using Assets.GameLogic.Scripts.GameEntities.Models;
-using System;
 using Assets.GameLogic.Scripts.GameEntities.GameBehaviours;
 using Assets.GameLogic.Scripts.GameEntities.GameBehaviours.Controllers;
 
@@ -18,7 +18,7 @@ public class Ship : MonoBehaviour
 
     private IShipInput shipInput;
     private ShipEngine shipMotor;
-    private GameObject playerShip;
+    private GameObject playerShipForFollow;
 
     private Health shipHealth;
     private ShipDied shipDied;
@@ -30,7 +30,7 @@ public class Ship : MonoBehaviour
 
     #region Public Properties
 
-    public event Action PlayerDiedEvent;
+    public event Action<Ship, int, Vector3> ShipDiedEvent;
 
     public int ShipHealth { get => shipHealth.HealthValue; }
 
@@ -57,22 +57,26 @@ public class Ship : MonoBehaviour
 
     private void Awake()
     {
+
         this.withAsteroidCollision = GetComponent<CollisionWithAsteroid>();
-        this.withAsteroidCollision.CollisionEvent += OnCollisionWithAsteroid;
+
+        if (gameObject.tag == new ApplicationTags().Player)
+        {
+            this.withAsteroidCollision.CollisionEvent += OnCollisionWithAsteroid;
+        }
 
         this.withEnemyShipCollision = GetComponent<CollisionWithEnemyShip>();
         this.withEnemyShipCollision.CollisionEvent += OnCollisionWithEnemyShip;
 
         this.shipDied = GetComponent<ShipDied>();
-        this.shipDied.ShipDieCompleteEvent += OnPlayerDie;
+        this.shipDied.ShipDieCompleteEvent += OnShipDie;
 
         this.shipHealth = GetComponent<Health>();
-        //this.shipHealth.HealthIsEmptyEvent += OnPlayerDie;
 
         if (shipSettings.UseAi)
         {
-            this.playerShip = GameObject.FindGameObjectWithTag("player");
-            this.shipInput = new AiAutomaticInput(this, this.playerShip);
+            this.playerShipForFollow = GameObject.FindGameObjectWithTag(new ApplicationTags().Player);
+            this.shipInput = new AiAutomaticInput(this, this.playerShipForFollow, shipSettings.MoveSpeed);
         }
         else
         {
@@ -105,23 +109,34 @@ public class Ship : MonoBehaviour
 
         shipDied.Die();
 
-        // Отключаем объект Корабля
-        gameObject.SetActive(false);
+        DeactivateShipObject();
 
         ApplicationLoggerService.LogCollision(this.gameObject.tag, asteroid.tag);
     }
 
     private void OnCollisionWithEnemyShip(Ship enemyShip)
     {
-        ApplicationLoggerService.LogCollision(this.gameObject.tag, enemyShip.tag);
+        shipDied.Die();
+
+        DeactivateShipObject();
+
+        ApplicationLoggerService.LogCollision(this.gameObject.tag, gameObject.tag);
+    }
+
+    /// <summary>
+    /// Метод отключает объект Корабль
+    /// </summary>
+    private void DeactivateShipObject()
+    {        
+        gameObject.SetActive(false);
     }
 
     /// <summary>
     /// Метод пробуждающий событие при уничтожении игрока
     /// </summary>
-    private void OnPlayerDie()
+    private void OnShipDie()
     {
-        PlayerDiedEvent?.Invoke();
+        ShipDiedEvent?.Invoke(this, this.shipSettings.PointsPerDestroying, this.gameObject.transform.position);
     }
 
     #endregion

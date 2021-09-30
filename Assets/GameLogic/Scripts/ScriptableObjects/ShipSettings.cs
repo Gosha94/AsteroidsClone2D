@@ -10,7 +10,8 @@ namespace Assets.GameLogic.Scripts
         [SerializeField] private float maxVelocity = 5.0f;
         [SerializeField] private float rotationSpeed = 250.0f;        
         [SerializeField] private float friction = 0.95f;
-        [SerializeField] private bool useAi = false;
+        [SerializeField] private int   pointsPerDestroying = 100;
+        [SerializeField] private bool  useAi = false;
 
         /// <summary>
         /// Ускорение корабля
@@ -31,6 +32,11 @@ namespace Assets.GameLogic.Scripts
         /// Сила трения
         /// </summary>
         public float Friction { get => this.friction; }
+
+        /// <summary>
+        /// Очки за уничтожение объекта
+        /// </summary>
+        public int PointsPerDestroying { get => this.pointsPerDestroying; }
 
         /// <summary>
         /// Флаг использования ИИ для управления кораблем

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1535922199133064819
+--- !u!1 &8293918691153490925
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1535922199133064818}
-  - component: {fileID: 1535922199133064829}
+  - component: {fileID: 8293918691153490924}
+  - component: {fileID: 8293918691153490915}
   m_Layer: 0
-  m_Name: AsteroidEmitterService
+  m_Name: EnemyShipEmitterService
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1535922199133064818
+--- !u!4 &8293918691153490924
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1535922199133064819}
+  m_GameObject: {fileID: 8293918691153490925}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,17 +31,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1535922199133064829
+--- !u!114 &8293918691153490915
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1535922199133064819}
+  m_GameObject: {fileID: 8293918691153490925}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fd6f025df4981e4aad2bd083071b616, type: 3}
+  m_Script: {fileID: 11500000, guid: 715aab4c52ebd624f8bc5a87eb18c728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroidPrefab: {fileID: 7417547410594185238, guid: b908e92345b382743aab4f3f58cbd19b, type: 3}
+  enemyShipPrefab: {fileID: 2632468414666232996, guid: a2f7ab60e24d2fc4b8d9dd51f2a95857, type: 3}
   emitterSettings: {fileID: 11400000, guid: f767cd08fa5f95d448a61effc50d3198, type: 2}

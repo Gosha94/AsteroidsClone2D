@@ -8,6 +8,20 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours.Controllers
     public class ApplicationLoggerService
     {
 
+        public static void LogInputError()
+        {
+            Debug.Log($"Обнаружен пустой объект Корабля, движение за ним невозможно!");
+        }
+
+        /// <summary>
+        /// Метод записи в лог Факта изменения здоровья
+        /// </summary>
+        /// <param name="tagName">Имя Объекта</param>
+        public static void LogHealthChange(string tagName)
+        {
+            Debug.Log($"Здоровье объекта {tagName} изменилось!");
+        }
+
         /// <summary>
         /// Метод записи в лог Здоровья объекта
         /// </summary>

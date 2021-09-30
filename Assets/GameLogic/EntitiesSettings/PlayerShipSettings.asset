@@ -15,5 +15,5 @@ MonoBehaviour:
   moveSpeed: 2
   maxVelocity: 5
   rotationSpeed: 250
-  friction: 0.5
+  friction: 0.95
   useAi: 0

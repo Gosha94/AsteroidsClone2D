@@ -16,7 +16,7 @@ namespace Assets.GameLogic.Scripts
         public void ReadInput()
         {
             this.Rotation = Input.GetAxis("Horizontal");
-            this.Thrust = Mathf.Clamp(Input.GetAxis("Vertical"), 0, 1);
+            this.Thrust = Input.GetAxis("Vertical");
 
             this.PrimaryWeaponFire = Input.GetMouseButtonDown(0);
             this.SeconaryWeaponFire = Input.GetMouseButtonDown(1);

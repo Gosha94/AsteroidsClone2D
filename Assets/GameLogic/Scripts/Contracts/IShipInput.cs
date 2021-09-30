@@ -1,4 +1,6 @@
-﻿namespace Assets.GameLogic.Scripts.Contracts
+﻿using UnityEngine;
+
+namespace Assets.GameLogic.Scripts.Contracts
 {
     /// <summary>
     /// Интерфейс ввода для корабля

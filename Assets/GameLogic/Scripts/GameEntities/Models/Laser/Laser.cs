@@ -14,7 +14,9 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours
         [SerializeField] private LaserSettings laserSettings;
 
         private ShotsBehindScreenDisposer destroyOffscreen;
-        private CollisionWithAsteroid collision;        
+        private CollisionWithAsteroid asteroidCollision;
+        private CollisionWithEnemyShip enemyShipCollision;
+
         private Armory armory;
 
         private int damage;
@@ -25,17 +27,15 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours
         void Awake()
         {
             this.destroyOffscreen = GetComponent<ShotsBehindScreenDisposer>();
-            this.collision = GetComponent<CollisionWithAsteroid>();
+            this.asteroidCollision = GetComponent<CollisionWithAsteroid>();
+            this.enemyShipCollision = GetComponent<CollisionWithEnemyShip>();
 
-            destroyOffscreen.DestroyShotEvent += OnEventDestroy;
-            collision.CollisionEvent += OnCollisionWithAsteroid;
+            this.destroyOffscreen.DestroyShotEvent += OnEventDestroy;
+            this.asteroidCollision.CollisionEvent += OnCollisionWithAsteroid;
         }
 
         void Update()
-        {
-            
-            //moveAlgorithm.MovingBasedOnAlgorithm(this.transform);
-        }
+        { }
 
         #endregion        
 
@@ -50,6 +50,24 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours
         #endregion
 
         #region Private Methods
+        
+        private void OnCollisionWithAsteroid(Asteroid asteroid)
+        {
+            asteroid.HandleCollision(int.MaxValue);
+            
+            if (this.gameObject.tag == new ApplicationTags().ShortLaser)
+            {
+                OnEventDestroy();
+            }
+        }
+
+        private void OnCollisionWithEnemyShip(Ship enemyShip)
+        {
+            if (this.gameObject.tag.ToLower() == new ApplicationTags().ShortLaser.ToLower())
+            {
+                OnEventDestroy();
+            }
+        }
 
         private void OnEventDestroy()
         {
@@ -61,12 +79,6 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours
             {
                 Destroy(gameObject);
             }
-        }
-        
-        private void OnCollisionWithAsteroid(Asteroid asteroid)
-        {
-            asteroid.HandleCollision(int.MaxValue);
-            OnEventDestroy();
         }
 
         #endregion

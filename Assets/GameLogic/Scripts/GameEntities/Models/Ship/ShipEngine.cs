@@ -1,5 +1,5 @@
-﻿using Assets.GameLogic.Scripts.Contracts;
-using UnityEngine;
+﻿using UnityEngine;
+using Assets.GameLogic.Scripts.Contracts;
 
 namespace Assets.GameLogic.Scripts
 {
