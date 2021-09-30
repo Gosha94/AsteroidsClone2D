@@ -92,6 +92,8 @@
     <Compile Include="Assets\GameLogic\Scripts\GameEntities\Models\Asteroid\Asteroid.cs" />
     <Compile Include="Assets\GameLogic\Scripts\GameEntities\GameBehaviours\Controllers\BehindScreenBase.cs" />
     <Compile Include="Assets\GameLogic\Scripts\GameEntities\Models\Ship\Ship.cs" />
+    <Compile Include="Assets\GameLogic\Scripts\GameEntities\Models\Common\PlayerData.cs" />
+    <Compile Include="Assets\GameLogic\Scripts\GameEntities\Models\PlayerCoordinates.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Materials\DefaultColorFlash.shader" />

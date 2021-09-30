@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using Assets.GameLogic.Scripts.GameEntities.GameBehaviours.Controllers;
+using Assets.GameLogic.Scripts.GameEntities.Models.Common;
 
 namespace Assets.GameLogic.Scripts.GameEntities.Views
 {
@@ -52,6 +53,20 @@ namespace Assets.GameLogic.Scripts.GameEntities.Views
 		public void UpdatePoints(int points)
 		{
 			scoreValue.text = points.ToString();
+		}
+
+		/// <summary>
+		/// Метод обновляет данные игрока в UI
+		/// </summary>
+		/// <param name="data">Данные игрока</param>
+		public void UpdatePlayerData(PlayerData receivedFromBackPlayerData)
+        {
+			this.xCoordinateShipValue.text	= receivedFromBackPlayerData.PlayerCoordinates.CoordinateX.ToString();
+			this.yCoordinateShipValue.text	= receivedFromBackPlayerData.PlayerCoordinates.CoordinateY.ToString();
+			this.angleShipValue.text		= receivedFromBackPlayerData.AngleShip.ToString();
+			this.speedShipValue.text		= receivedFromBackPlayerData.SpeedShipValue.ToString();
+			this.laserCountShipValue.text	= receivedFromBackPlayerData.LaserCountShip.ToString();
+			this.laserReloadShipTime.text	= receivedFromBackPlayerData.LaserReloadShipTime.ToString();
 		}
 
 		/// <summary>

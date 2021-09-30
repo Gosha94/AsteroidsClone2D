@@ -1,3 +1,4 @@
+using Assets.GameLogic.Scripts.GameEntities.Models.Common;
 using System;
 using UnityEngine;
 
@@ -25,6 +26,10 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours.Controllers
         [SerializeField] private GameManagementService gameService;
         [SerializeField] private GameObject gameEnvironment;
         [SerializeField] private int startPlayerLives = 1;
+
+        private float delayOfTransmitPlayerData = 2.0f;
+        private float timerOfCurrentTimeStamp = 0.0f;
+        
 
         #endregion
 
@@ -71,6 +76,19 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours.Controllers
         #endregion
 
         #region Mono Methods
+
+        private void LateUpdate()
+        {
+            this.timerOfCurrentTimeStamp += Time.deltaTime;
+            
+            if (this.timerOfCurrentTimeStamp > this.delayOfTransmitPlayerData)
+            {            
+                var playerDataForUi = this.gameService.GetPlayerData();
+                this.uiService.UpdatePlayerData(playerDataForUi);
+
+                this.timerOfCurrentTimeStamp = -this.delayOfTransmitPlayerData;
+            }
+        }
 
         void Awake()
         {

@@ -1,4 +1,5 @@
-﻿using Assets.GameLogic.Scripts.GameEntities.Views;
+﻿using Assets.GameLogic.Scripts.GameEntities.Models.Common;
+using Assets.GameLogic.Scripts.GameEntities.Views;
 using UnityEngine;
 
 namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours.Controllers
@@ -52,6 +53,11 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours.Controllers
 		{
 			gameProcessView.UpdatePoints(points);
 		}
+
+		public void UpdatePlayerData(PlayerData data)
+        {
+			gameProcessView.UpdatePlayerData(data);
+        }
 
 		public void ShowLevelStart()
 		{

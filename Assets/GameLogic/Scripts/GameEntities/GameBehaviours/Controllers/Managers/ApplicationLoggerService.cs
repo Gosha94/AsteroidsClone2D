@@ -8,7 +8,18 @@ namespace Assets.GameLogic.Scripts.GameEntities.GameBehaviours.Controllers
     public class ApplicationLoggerService
     {
 
-        public static void LogInputError()
+        /// <summary>
+        /// Метод логирует окончание передачи данных пользователя в UI
+        /// </summary>
+        public static void LogFinishTransferPlayerData()
+        {
+            Debug.Log("Данные игрока переданы в UI");
+        }
+
+        /// <summary>
+        /// Метод логирует ошибку отсутствия прикрепленного объекта в Unity
+        /// </summary>
+        public static void LogNullReferenceError()
         {
             Debug.Log($"Обнаружен пустой объект Корабля, движение за ним невозможно!");
         }

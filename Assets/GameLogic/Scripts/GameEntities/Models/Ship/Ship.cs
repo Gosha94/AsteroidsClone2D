@@ -31,8 +31,8 @@ public class Ship : MonoBehaviour
     #region Public Properties
 
     public event Action<Ship, int, Vector3> ShipDiedEvent;
-
-    public int ShipHealth { get => shipHealth.HealthValue; }
+    public float ShipSpeed { get => shipInput.Thrust; }
+    public float ShipAngle { get => this.gameObject.transform.rotation.z; }
 
     #endregion
 
